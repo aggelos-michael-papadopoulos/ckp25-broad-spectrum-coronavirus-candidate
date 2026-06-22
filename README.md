@@ -139,6 +139,18 @@ python scripts/create_plots/plot_mmpbsa_bar.py --results-dir runs --out-dir pape
 | Production          | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs   |
 | MM-GBSA             | AmberTools `MMPBSA.py`, GB model `igb=2`, 0.150 M salt      |
 
+## Third-Party Software
+
+This repository contains workflow scripts and curated inputs. It does not
+redistribute GROMACS; the pipeline calls the user-installed `gmx` executable
+from the Conda environment. GROMACS is distributed by its developers under the
+GNU LGPL v2.1 license. If you use this workflow, please also cite the
+appropriate GROMACS version and papers according to the official GROMACS
+citation metadata.
+
+The offline trajectory viewer bundles `3Dmol-min.js` and `jquery.min.js`.
+Their license notices are retained in `gromacs_files/`.
+
 ## License
 
 This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for details.

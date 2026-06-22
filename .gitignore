@@ -38,6 +38,7 @@
 !/gromacs_files/
 /gromacs_files/*
 !/gromacs_files/3Dmol-min.js
+!/gromacs_files/3Dmol-min.js.LICENSE.txt
 !/gromacs_files/jquery.min.js
 !/gromacs_files/_mdrun_progress.py
 !/gromacs_files/analyze_gmx.py
