@@ -141,6 +141,14 @@ python plot_mmpbsa_bar.py --results-dir runs --out-dir paper_figures
 | Production | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs |
 | MM-GBSA | AmberTools `MMPBSA.py`, GB model `igb=2`, 0.150 M salt |
 
+## License
+
+This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+## Citation
+
+Citation coming soon. The full manuscript citation will be added here after publication.
+
 ## Notes for GitHub
 
 The `.gitignore` keeps generated MD outputs, MM-GBSA intermediates, raw exploratory folders, and the old OpenMM attempt out of the public repository. The committed pieces should be the manuscript, curated inputs, workflow figure, GROMACS pipeline, analysis scripts, and environment definition.
