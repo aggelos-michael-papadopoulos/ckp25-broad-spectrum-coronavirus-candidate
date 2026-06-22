@@ -1,0 +1,6 @@
+system,virus,pdb_id,chain,selected_pose_file,reported_affinity_kcal_mol
+MERS,MERS-CoV,4KR0,B,Data/docked_poses/MERS_CKP25_top_pose.sdf,-6.61
+SARS1,SARS-CoV-1,2AJF,E,Data/docked_poses/SARS1_CKP25_top_pose.sdf,-6.18
+NL63,HCoV-NL63,3KBH,E,Data/docked_poses/NL63_CKP25_top_pose.sdf,-6.32
+229E,HCoV-229E,6ATK,E,Data/docked_poses/229E_CKP25_top_pose.sdf,-5.93
+HKU1,HCoV-HKU1,8Y7Y,A,Data/docked_poses/HKU1_CKP25_top_pose.sdf,-6.76

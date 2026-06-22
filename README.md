@@ -18,6 +18,7 @@ High-resolution PDF: [`images/workflow.pdf`](images/workflow.pdf)
 .
 ├── Data/                         # Curated paper inputs: spike PDBs + CKP-25 docked poses
 ├── images/                       # Workflow figure for GitHub
+├── paper_results/                # Lightweight processed source data
 ├── gromacs_files/                # Core GROMACS preparation, simulation, analysis, viewer code
 ├── scripts/                      # Paper-level wrappers for all five systems
 │   └── create_plots/             # Aggregate plotting and paper-figure scripts
@@ -85,6 +86,20 @@ bash scripts/run_all_md.sh 100 runs
 ```
 
 Outputs are written to `runs/` and are ignored by Git because trajectory and topology files are large.
+
+## Processed Paper Results
+
+Lightweight numerical source data are provided in `paper_results/`. These files
+include processed docking scores, MD stability/contact metrics, residue contact
+frequencies, and MM-GBSA summaries/per-frame delta energies. Raw docking logs,
+full trajectories, binary GROMACS outputs, checkpoints, and large intermediate
+files are intentionally excluded.
+
+To regenerate the processed tables from local completed simulations:
+
+```bash
+python scripts/export_paper_results.py --results-dir runs --out-dir paper_results
+```
 
 ## Generate MD Analysis Figures
 

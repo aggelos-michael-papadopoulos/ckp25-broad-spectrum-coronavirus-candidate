@@ -1,0 +1,6 @@
+system,ligand_resname,protein_ca_rmsd_mean_angstrom,protein_ca_rmsd_plateau_second_half_angstrom,ligand_rmsd_mean_angstrom,ligand_rmsd_plateau_second_half_angstrom,radius_of_gyration_mean_angstrom,close_contacts_mean_3p5A,polar_contacts_mean_3p5A
+MERS,MOL,1.393178,1.437128,1.080445,1.046786,18.727873,11.000999,0.529471
+SARS1,MOL,3.134832,3.208942,1.135221,0.895382,16.988635,10.113886,0.281718
+NL63,MOL,3.194290,3.329912,1.120074,0.803488,15.366010,12.920080,0.457542
+229E,MOL,1.364988,1.471440,1.276762,1.273522,16.308023,7.727273,0.240759
+HKU1,MOL,1.625453,1.740727,1.332820,1.347908,19.185655,8.217782,0.506494

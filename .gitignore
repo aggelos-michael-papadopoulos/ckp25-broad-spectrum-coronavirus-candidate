@@ -51,6 +51,7 @@
 !/scripts/
 /scripts/*
 !/scripts/*.sh
+!/scripts/export_paper_results.py
 !/scripts/create_plots/
 /scripts/create_plots/*
 !/scripts/create_plots/*.py
@@ -59,5 +60,22 @@
 !/convert_topologies.py
 !/extract_mmpbsa_traj.py
 !/extract_metrics_all.py
+
+# Processed numerical source data for manuscript figures/tables.
+!/paper_results/
+/paper_results/*
+!/paper_results/README.md
+!/paper_results/docking/
+/paper_results/docking/*
+!/paper_results/docking/*.csv
+!/paper_results/md_processed/
+/paper_results/md_processed/*
+!/paper_results/md_processed/*.csv
+!/paper_results/mmgbsa/
+/paper_results/mmgbsa/*
+!/paper_results/mmgbsa/*.csv
+!/paper_results/figures/
+/paper_results/figures/*
+!/paper_results/figures/README.md
 
 # Keep all generated outputs, local state, prototypes, and scratch files hidden.
