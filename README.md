@@ -1,7 +1,5 @@
 # CKP-25 Broad-Spectrum Coronavirus Spike MD Workflow
 
-Computational companion repository for the manuscript:
-
 **Targeting Diverse Human Coronaviruses with a Single Small Molecule: Computational Assessment of CKP-25 as a Promising Broad-Spectrum Receptor-Binding Anchor**
 
 This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and analysis scripts used to generate the figures and tables in the paper.
@@ -30,13 +28,13 @@ Legacy OpenMM files and raw exploratory docking folders are intentionally ignore
 
 ## Input Systems
 
-| System | Virus | PDB | Spike chain | Starting files |
-|---|---|---:|:---:|---|
-| MERS | MERS-CoV | 4KR0 | B | `Data/proteins/MERS_4KR0_B_spike.pdb`, `Data/docked_poses/MERS_CKP25_top_pose.sdf` |
-| SARS1 | SARS-CoV-1 | 2AJF | E | `Data/proteins/SARS1_2AJF_E_spike.pdb`, `Data/docked_poses/SARS1_CKP25_top_pose.sdf` |
-| NL63 | HCoV-NL63 | 3KBH | E | `Data/proteins/NL63_3KBH_E_spike.pdb`, `Data/docked_poses/NL63_CKP25_top_pose.sdf` |
-| 229E | HCoV-229E | 6ATK | E | `Data/proteins/229E_6ATK_E_spike.pdb`, `Data/docked_poses/229E_CKP25_top_pose.sdf` |
-| HKU1 | HCoV-HKU1 | 8Y7Y | A | `Data/proteins/HKU1_8Y7Y_A_spike.pdb`, `Data/docked_poses/HKU1_CKP25_top_pose.sdf` |
+| System | Virus      |  PDB | Spike chain | Starting files                                                                           |
+| ------ | ---------- | ---: | :---------: | ---------------------------------------------------------------------------------------- |
+| MERS   | MERS-CoV   | 4KR0 |      B      | `Data/proteins/MERS_4KR0_B_spike.pdb`, `Data/docked_poses/MERS_CKP25_top_pose.sdf`   |
+| SARS1  | SARS-CoV-1 | 2AJF |      E      | `Data/proteins/SARS1_2AJF_E_spike.pdb`, `Data/docked_poses/SARS1_CKP25_top_pose.sdf` |
+| NL63   | HCoV-NL63  | 3KBH |      E      | `Data/proteins/NL63_3KBH_E_spike.pdb`, `Data/docked_poses/NL63_CKP25_top_pose.sdf`   |
+| 229E   | HCoV-229E  | 6ATK |      E      | `Data/proteins/229E_6ATK_E_spike.pdb`, `Data/docked_poses/229E_CKP25_top_pose.sdf`   |
+| HKU1   | HCoV-HKU1  | 8Y7Y |      A      | `Data/proteins/HKU1_8Y7Y_A_spike.pdb`, `Data/docked_poses/HKU1_CKP25_top_pose.sdf`   |
 
 Machine-readable mapping: [`Data/metadata.tsv`](Data/metadata.tsv)
 
@@ -125,28 +123,24 @@ python scripts/create_plots/plot_mmpbsa_bar.py --results-dir runs --out-dir pape
 
 ## Simulation Settings Encoded in the Pipeline
 
-| Step | Setting |
-|---|---|
-| Protein force field | AMBER99SB-ILDN |
-| Ligand force field | GAFF2 via ACPYPE |
-| Ligand charges | AM1-BCC |
-| Water model | TIP3P (`spc216.gro`) |
-| Salt | 0.15 M NaCl, neutralized |
-| Box | Dodecahedron, 1.2 nm margin |
-| Energy minimization | Steepest descent, 50,000 steps |
-| NVT | 100 ps, V-rescale thermostat, 300 K |
-| NPT | 100 ps, V-rescale thermostat, Parrinello-Rahman barostat, 1 bar |
-| Production | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs |
-| MM-GBSA | AmberTools `MMPBSA.py`, GB model `igb=2`, 0.150 M salt |
+| Step                | Setting                                                         |
+| ------------------- | --------------------------------------------------------------- |
+| Protein force field | AMBER99SB-ILDN                                                  |
+| Ligand force field  | GAFF2 via ACPYPE                                                |
+| Ligand charges      | AM1-BCC                                                         |
+| Water model         | TIP3P (`spc216.gro`)                                          |
+| Salt                | 0.15 M NaCl, neutralized                                        |
+| Box                 | Dodecahedron, 1.2 nm margin                                     |
+| Energy minimization | Steepest descent, 50,000 steps                                  |
+| NVT                 | 100 ps, V-rescale thermostat, 300 K                             |
+| NPT                 | 100 ps, V-rescale thermostat, Parrinello-Rahman barostat, 1 bar |
+| Production          | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs   |
+| MM-GBSA             | AmberTools `MMPBSA.py`, GB model `igb=2`, 0.150 M salt      |
 
 ## License
 
 This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
-## Citation
+## 📍Citation
 
 Citation coming soon. The full manuscript citation will be added here after publication.
-
-## Notes for GitHub
-
-The `.gitignore` keeps generated MD outputs, MM-GBSA intermediates, raw exploratory folders, the old OpenMM attempt, and manuscript drafting files out of the public repository. The committed pieces should be the curated inputs, workflow figure, GROMACS pipeline, analysis scripts, and environment definition.
