@@ -90,10 +90,11 @@ Outputs are written to `runs/` and are ignored by Git because trajectory and top
 ## Processed Paper Results
 
 Lightweight numerical source data are provided in `paper_results/`. These files
-include processed selected-pose docking scores, MD stability/contact metrics,
-residue contact frequencies, and MM-GBSA summaries/per-frame delta energies.
-Raw docking logs, docking-box logs, full trajectories, binary GROMACS outputs,
-checkpoints, and large intermediate files are intentionally excluded.
+include processed selected-pose docking scores, docking search-box coordinates,
+MD stability/contact metrics, residue contact frequencies, and MM-GBSA
+summaries/per-frame delta energies. Raw docking logs, full trajectories, binary
+GROMACS outputs, checkpoints, and large intermediate files are intentionally
+excluded.
 
 To regenerate the processed tables from local completed simulations:
 

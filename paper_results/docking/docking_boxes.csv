@@ -1,0 +1,6 @@
+system,virus,pdb_id,chain,center_x_angstrom,center_y_angstrom,center_z_angstrom,size_x_angstrom,size_y_angstrom,size_z_angstrom,min_x_angstrom,max_x_angstrom,min_y_angstrom,max_y_angstrom,min_z_angstrom,max_z_angstrom
+MERS,MERS-CoV,4KR0,B,-43.00,25.00,29.00,59.00,35.00,23.00,-72.50,-13.50,7.50,42.50,17.50,40.50
+SARS1,SARS-CoV-1,2AJF,E,9.00,-17.00,70.00,17.00,39.00,29.00,0.50,17.50,-36.50,2.50,55.50,84.50
+NL63,HCoV-NL63,3KBH,E,7.47,0.60,43.00,17.00,36.00,18.00,-1.03,15.97,-17.40,18.60,34.00,52.00
+229E,HCoV-229E,6ATK,E,115.80,99.00,55.00,23.00,27.00,34.00,104.30,127.30,85.50,112.50,38.00,72.00
+HKU1,HCoV-HKU1,8Y7Y,A,140.00,131.00,148.00,20.00,25.00,81.00,130.00,150.00,118.50,143.50,107.50,188.50

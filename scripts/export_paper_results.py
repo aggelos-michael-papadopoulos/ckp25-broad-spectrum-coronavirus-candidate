@@ -71,6 +71,14 @@ SYSTEMS = [
     },
 ]
 
+DOCKING_BOXES = {
+    "MERS": {"center": (-43.0, 25.0, 29.0), "size": (59.0, 35.0, 23.0)},
+    "SARS1": {"center": (9.0, -17.0, 70.0), "size": (17.0, 39.0, 29.0)},
+    "NL63": {"center": (7.47, 0.6, 43.0), "size": (17.0, 36.0, 18.0)},
+    "229E": {"center": (115.8, 99.0, 55.0), "size": (23.0, 27.0, 34.0)},
+    "HKU1": {"center": (140.0, 131.0, 148.0), "size": (20.0, 25.0, 81.0)},
+}
+
 STANDARD_AMINO_ACIDS = {
     "ALA", "ARG", "ASN", "ASP", "CYS", "GLN", "GLU", "GLY", "HIS",
     "ILE", "LEU", "LYS", "MET", "PHE", "PRO", "SER", "THR", "TRP",
@@ -155,6 +163,7 @@ def load_solute_trajectory(system: dict, results_dir: Path, stride: int):
 
 def export_docking(out_dir: Path) -> None:
     score_rows = []
+    box_rows = []
     for system in SYSTEMS:
         score_rows.append({
             "system": system["key"],
@@ -164,11 +173,54 @@ def export_docking(out_dir: Path) -> None:
             "selected_pose_file": system["pose"],
             "reported_docking_affinity_kcal_mol": f"{system['affinity']:.2f}",
         })
+        box = DOCKING_BOXES[system["key"]]
+        center_x, center_y, center_z = box["center"]
+        size_x, size_y, size_z = box["size"]
+        box_rows.append({
+            "system": system["key"],
+            "virus": system["virus"],
+            "pdb_id": system["pdb_id"],
+            "chain": system["chain"],
+            "center_x_angstrom": f"{center_x:.2f}",
+            "center_y_angstrom": f"{center_y:.2f}",
+            "center_z_angstrom": f"{center_z:.2f}",
+            "size_x_angstrom": f"{size_x:.2f}",
+            "size_y_angstrom": f"{size_y:.2f}",
+            "size_z_angstrom": f"{size_z:.2f}",
+            "min_x_angstrom": f"{center_x - size_x / 2:.2f}",
+            "max_x_angstrom": f"{center_x + size_x / 2:.2f}",
+            "min_y_angstrom": f"{center_y - size_y / 2:.2f}",
+            "max_y_angstrom": f"{center_y + size_y / 2:.2f}",
+            "min_z_angstrom": f"{center_z - size_z / 2:.2f}",
+            "max_z_angstrom": f"{center_z + size_z / 2:.2f}",
+        })
 
     write_csv(
         out_dir / "docking" / "docking_scores.csv",
         ["system", "virus", "pdb_id", "chain", "selected_pose_file", "reported_docking_affinity_kcal_mol"],
         score_rows,
+    )
+    write_csv(
+        out_dir / "docking" / "docking_boxes.csv",
+        [
+            "system",
+            "virus",
+            "pdb_id",
+            "chain",
+            "center_x_angstrom",
+            "center_y_angstrom",
+            "center_z_angstrom",
+            "size_x_angstrom",
+            "size_y_angstrom",
+            "size_z_angstrom",
+            "min_x_angstrom",
+            "max_x_angstrom",
+            "min_y_angstrom",
+            "max_y_angstrom",
+            "min_z_angstrom",
+            "max_z_angstrom",
+        ],
+        box_rows,
     )
 
 
@@ -438,8 +490,8 @@ def write_readmes(out_dir: Path, stride: int, bins: int) -> None:
         "protein-ligand heavy-atom cutoff. Close-contact and polar-contact time "
         "series use a 3.5 angstrom cutoff.\n\n"
         "Subdirectories:\n\n"
-        "- `docking/`: processed selected-pose docking score table only; raw "
-        "docking logs and docking-box logs are not included.\n"
+        "- `docking/`: processed selected-pose docking scores and docking "
+        "search-box coordinates; raw docking logs are not included.\n"
         "- `md_processed/`: numerical source data for RMSD, RMSF, radius of "
         "gyration, close contacts, polar contacts, and residue contact maps.\n"
         "- `mmgbsa/`: final MM-GBSA summary terms and per-frame delta energies.\n"
