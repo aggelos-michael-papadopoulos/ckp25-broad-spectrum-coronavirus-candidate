@@ -1,6 +1,0 @@
-system,virus,pdb_id,chain,center_x_angstrom,center_y_angstrom,center_z_angstrom,size_x_angstrom,size_y_angstrom,size_z_angstrom,exhaustiveness
-MERS,MERS-CoV,4KR0,B,-43.0,25.0,29.0,59.0,35.0,23.0,8
-SARS1,SARS-CoV-1,2AJF,E,9.0,-17.0,70.0,17.0,39.0,29.0,8
-NL63,HCoV-NL63,3KBH,E,7.47,0.6,43.0,17.0,36.0,18.0,8
-229E,HCoV-229E,6ATK,E,115.8,99.0,55.0,23.0,27.0,34.0,8
-HKU1,HCoV-HKU1,8Y7Y,A,140.0,131.0,148.0,20.0,25.0,81.0,8

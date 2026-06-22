@@ -6,7 +6,7 @@ MD trajectory-derived tables were exported with stride=10. Residue contact heatm
 
 Subdirectories:
 
-- `docking/`: processed docking score and box tables only.
+- `docking/`: processed selected-pose docking score table only; raw docking logs and docking-box logs are not included.
 - `md_processed/`: numerical source data for RMSD, RMSF, radius of gyration, close contacts, polar contacts, and residue contact maps.
 - `mmgbsa/`: final MM-GBSA summary terms and per-frame delta energies.
 - `figures/`: placeholder for regenerated figures; publication figures can be recreated from the workflow scripts.

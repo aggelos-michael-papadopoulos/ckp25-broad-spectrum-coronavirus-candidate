@@ -28,7 +28,6 @@ SYSTEMS = [
         "protein": "Data/proteins/MERS_4KR0_B_spike.pdb",
         "pose": "Data/docked_poses/MERS_CKP25_top_pose.sdf",
         "affinity": -6.61,
-        "box": (-43.0, 25.0, 29.0, 59.0, 35.0, 23.0),
     },
     {
         "key": "SARS1",
@@ -39,7 +38,6 @@ SYSTEMS = [
         "protein": "Data/proteins/SARS1_2AJF_E_spike.pdb",
         "pose": "Data/docked_poses/SARS1_CKP25_top_pose.sdf",
         "affinity": -6.18,
-        "box": (9.0, -17.0, 70.0, 17.0, 39.0, 29.0),
     },
     {
         "key": "NL63",
@@ -50,7 +48,6 @@ SYSTEMS = [
         "protein": "Data/proteins/NL63_3KBH_E_spike.pdb",
         "pose": "Data/docked_poses/NL63_CKP25_top_pose.sdf",
         "affinity": -6.32,
-        "box": (7.47, 0.60, 43.0, 17.0, 36.0, 18.0),
     },
     {
         "key": "229E",
@@ -61,7 +58,6 @@ SYSTEMS = [
         "protein": "Data/proteins/229E_6ATK_E_spike.pdb",
         "pose": "Data/docked_poses/229E_CKP25_top_pose.sdf",
         "affinity": -5.93,
-        "box": (115.8, 99.0, 55.0, 23.0, 27.0, 34.0),
     },
     {
         "key": "HKU1",
@@ -72,7 +68,6 @@ SYSTEMS = [
         "protein": "Data/proteins/HKU1_8Y7Y_A_spike.pdb",
         "pose": "Data/docked_poses/HKU1_CKP25_top_pose.sdf",
         "affinity": -6.76,
-        "box": (140.0, 131.0, 148.0, 20.0, 25.0, 81.0),
     },
 ]
 
@@ -160,7 +155,6 @@ def load_solute_trajectory(system: dict, results_dir: Path, stride: int):
 
 def export_docking(out_dir: Path) -> None:
     score_rows = []
-    box_rows = []
     for system in SYSTEMS:
         score_rows.append({
             "system": system["key"],
@@ -168,37 +162,13 @@ def export_docking(out_dir: Path) -> None:
             "pdb_id": system["pdb_id"],
             "chain": system["chain"],
             "selected_pose_file": system["pose"],
-            "reported_affinity_kcal_mol": f"{system['affinity']:.2f}",
-        })
-        cx, cy, cz, sx, sy, sz = system["box"]
-        box_rows.append({
-            "system": system["key"],
-            "virus": system["virus"],
-            "pdb_id": system["pdb_id"],
-            "chain": system["chain"],
-            "center_x_angstrom": cx,
-            "center_y_angstrom": cy,
-            "center_z_angstrom": cz,
-            "size_x_angstrom": sx,
-            "size_y_angstrom": sy,
-            "size_z_angstrom": sz,
-            "exhaustiveness": 8,
+            "reported_docking_affinity_kcal_mol": f"{system['affinity']:.2f}",
         })
 
     write_csv(
         out_dir / "docking" / "docking_scores.csv",
-        ["system", "virus", "pdb_id", "chain", "selected_pose_file", "reported_affinity_kcal_mol"],
+        ["system", "virus", "pdb_id", "chain", "selected_pose_file", "reported_docking_affinity_kcal_mol"],
         score_rows,
-    )
-    write_csv(
-        out_dir / "docking" / "docking_boxes.csv",
-        [
-            "system", "virus", "pdb_id", "chain",
-            "center_x_angstrom", "center_y_angstrom", "center_z_angstrom",
-            "size_x_angstrom", "size_y_angstrom", "size_z_angstrom",
-            "exhaustiveness",
-        ],
-        box_rows,
     )
 
 
@@ -468,7 +438,8 @@ def write_readmes(out_dir: Path, stride: int, bins: int) -> None:
         "protein-ligand heavy-atom cutoff. Close-contact and polar-contact time "
         "series use a 3.5 angstrom cutoff.\n\n"
         "Subdirectories:\n\n"
-        "- `docking/`: processed docking score and box tables only.\n"
+        "- `docking/`: processed selected-pose docking score table only; raw "
+        "docking logs and docking-box logs are not included.\n"
         "- `md_processed/`: numerical source data for RMSD, RMSF, radius of "
         "gyration, close contacts, polar contacts, and residue contact maps.\n"
         "- `mmgbsa/`: final MM-GBSA summary terms and per-frame delta energies.\n"
