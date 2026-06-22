@@ -50,26 +50,4 @@
  21 20  1  0  0  0  0
  22 21  1  0  0  0  0
 M  END
->  <MODEL>
-1
-
->  <REMARK>
- VINA RESULT:    -6.323      0.000      0.000
- INTER + INTRA:          -8.035
- INTER:                  -7.431
- INTRA:                  -0.603
- UNBOUND:                -0.603
-  Name = ﻿
-  4 active torsions:
-  status: ('A' for Active; 'I' for Inactive)
-    1  A    between atoms: C_1  and  O_2
-    2  A    between atoms: O_2  and  C_3
-    3  A    between atoms: N_6  and  C_7
-    4  A    between atoms: C_7  and  C_8
-                            x       y       z     vdW  Elec       q    Type
-                         _______ _______ _______ _____ _____    ______ ____
-
->  <TORSDO>
-F 3
-
 $$$$
