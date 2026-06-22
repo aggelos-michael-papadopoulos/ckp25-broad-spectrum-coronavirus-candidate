@@ -10,6 +10,7 @@ RESULTS_DIR="${1:-runs}"
 FIGURE_DIR="${2:-paper_figures}"
 NS="${3:-100}"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PLOT_SCRIPTS="$ROOT/scripts/create_plots"
 
 SYSTEMS=(
   "MERS_B_Spike_md"
@@ -37,10 +38,10 @@ done
 echo ""
 echo "Writing summary table and aggregate figures..."
 python "$ROOT/extract_metrics_all.py" --results-dir "$ROOT/$RESULTS_DIR" > "$ROOT/$FIGURE_DIR/md_metrics_summary.md"
-python "$ROOT/plot_all_metrics.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
-python "$ROOT/plot_rmsf_rg_combined.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
-python "$ROOT/plot_polar_stability.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
-python "$ROOT/make_combined_heatmap.py" --results-dir "$ROOT/$RESULTS_DIR" --data-dir "$ROOT/Data" --out-dir "$ROOT/$FIGURE_DIR"
+python "$PLOT_SCRIPTS/plot_all_metrics.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
+python "$PLOT_SCRIPTS/plot_rmsf_rg_combined.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
+python "$PLOT_SCRIPTS/plot_polar_stability.py" --results-dir "$ROOT/$RESULTS_DIR" --out-dir "$ROOT/$FIGURE_DIR" --ns "$NS"
+python "$PLOT_SCRIPTS/make_combined_heatmap.py" --results-dir "$ROOT/$RESULTS_DIR" --data-dir "$ROOT/Data" --out-dir "$ROOT/$FIGURE_DIR"
 
 echo ""
 echo "Analysis finished. Figures and tables are in: $FIGURE_DIR/"

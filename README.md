@@ -20,9 +20,10 @@ High-resolution PDF: [`images/workflow.pdf`](images/workflow.pdf)
 ├── images/                       # Workflow figure for GitHub
 ├── gromacs_files/                # Core GROMACS preparation, simulation, analysis, viewer code
 ├── scripts/                      # Paper-level wrappers for all five systems
+│   └── create_plots/             # Aggregate plotting and paper-figure scripts
 ├── environment.yml               # Conda environment for reproducible runs
 ├── mmpbsa.in                     # AmberTools MM-GBSA input
-└── *_metrics / plot / heatmap scripts
+└── extract / topology helper scripts
 ```
 
 Legacy OpenMM files and raw exploratory docking folders are intentionally ignored by Git. The public workflow is the GROMACS-based workflow described in the manuscript.
@@ -119,7 +120,7 @@ bash scripts/run_mmpbsa_all.sh runs
 Plot the MM-GBSA binding free-energy summary:
 
 ```bash
-python plot_mmpbsa_bar.py --results-dir runs --out-dir paper_figures
+python scripts/create_plots/plot_mmpbsa_bar.py --results-dir runs --out-dir paper_figures
 ```
 
 ## Simulation Settings Encoded in the Pipeline

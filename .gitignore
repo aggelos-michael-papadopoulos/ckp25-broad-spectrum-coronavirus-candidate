@@ -50,15 +50,13 @@
 !/scripts/
 /scripts/*
 !/scripts/*.sh
+!/scripts/create_plots/
+/scripts/create_plots/*
+!/scripts/create_plots/*.py
 
 # Analysis and MM-GBSA helper scripts used by the wrappers/README
 !/convert_topologies.py
 !/extract_mmpbsa_traj.py
 !/extract_metrics_all.py
-!/plot_all_metrics.py
-!/plot_mmpbsa_bar.py
-!/plot_polar_stability.py
-!/plot_rmsf_rg_combined.py
-!/make_combined_heatmap.py
 
 # Keep all generated outputs, local state, prototypes, and scratch files hidden.
