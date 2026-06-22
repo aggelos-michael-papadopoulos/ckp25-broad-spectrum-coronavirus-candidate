@@ -1,6 +1,6 @@
 # CKP-25 paper companion repository
 # Publish policy: ignore everything by default, then allow only the
-# reproducible GROMACS workflow, curated inputs, manuscript, and docs.
+# reproducible GROMACS workflow, curated inputs, workflow image, and docs.
 
 /*
 
@@ -29,10 +29,10 @@
 !/Data/docked_poses/*.sdf
 
 # Workflow figure for the GitHub README
-!/docs/
-/docs/*
-!/docs/workflow.pdf
-!/docs/workflow.png
+!/images/
+/images/*
+!/images/workflow.pdf
+!/images/workflow.png
 
 # Active GROMACS pipeline
 !/gromacs_files/
@@ -60,24 +60,5 @@
 !/plot_polar_stability.py
 !/plot_rmsf_rg_combined.py
 !/make_combined_heatmap.py
-
-# Active manuscript source and figures referenced by mdpi.tex
-!/MDPI_MD_on_COVID_targets_paper/
-/MDPI_MD_on_COVID_targets_paper/*
-!/MDPI_MD_on_COVID_targets_paper/mdpi.tex
-!/MDPI_MD_on_COVID_targets_paper/refs.bib
-!/MDPI_MD_on_COVID_targets_paper/Definitions/
-!/MDPI_MD_on_COVID_targets_paper/Definitions/**
-!/MDPI_MD_on_COVID_targets_paper/images/
-/MDPI_MD_on_COVID_targets_paper/images/*
-!/MDPI_MD_on_COVID_targets_paper/images/workflow.pdf
-!/MDPI_MD_on_COVID_targets_paper/images/5_covid_targets_best_pose_with_cpk25.pdf
-!/MDPI_MD_on_COVID_targets_paper/images/md_protein_rmsd.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_ligand_rmsd.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_ligand_boxplot.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_contacts.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_contact_heatmap_5panel.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_rmsf_rg_stability.jpg
-!/MDPI_MD_on_COVID_targets_paper/images/md_polar_contacts_stability.jpg
 
 # Keep all generated outputs, local state, prototypes, and scratch files hidden.

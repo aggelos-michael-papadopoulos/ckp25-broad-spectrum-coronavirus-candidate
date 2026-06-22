@@ -8,21 +8,18 @@ This repository contains the curated spike-protein inputs, CKP-25 docking poses,
 
 ## Workflow
 
-![CKP-25 coronavirus spike MD workflow](docs/workflow.png)
+![CKP-25 coronavirus spike MD workflow](images/workflow.png)
 
-High-resolution PDF: [`docs/workflow.pdf`](docs/workflow.pdf)
+High-resolution PDF: [`images/workflow.pdf`](images/workflow.pdf)
 
 ## Repository Layout
 
 ```text
 .
 ├── Data/                         # Curated paper inputs: spike PDBs + CKP-25 docked poses
-├── docs/                         # Workflow figure for GitHub and manuscript reference
+├── images/                       # Workflow figure for GitHub
 ├── gromacs_files/                # Core GROMACS preparation, simulation, analysis, viewer code
 ├── scripts/                      # Paper-level wrappers for all five systems
-├── MDPI_MD_on_COVID_targets_paper/
-│   ├── mdpi.tex                  # Active manuscript
-│   └── images/                   # Manuscript figures
 ├── environment.yml               # Conda environment for reproducible runs
 ├── mmpbsa.in                     # AmberTools MM-GBSA input
 └── *_metrics / plot / heatmap scripts
@@ -151,4 +148,4 @@ Citation coming soon. The full manuscript citation will be added here after publ
 
 ## Notes for GitHub
 
-The `.gitignore` keeps generated MD outputs, MM-GBSA intermediates, raw exploratory folders, and the old OpenMM attempt out of the public repository. The committed pieces should be the manuscript, curated inputs, workflow figure, GROMACS pipeline, analysis scripts, and environment definition.
+The `.gitignore` keeps generated MD outputs, MM-GBSA intermediates, raw exploratory folders, the old OpenMM attempt, and manuscript drafting files out of the public repository. The committed pieces should be the curated inputs, workflow figure, GROMACS pipeline, analysis scripts, and environment definition.
