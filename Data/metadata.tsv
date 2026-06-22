@@ -1,0 +1,6 @@
+system	virus	pdb_id	spike_chain	protein_file	docked_pose_file	md_output_folder
+MERS	MERS-CoV	4KR0	B	Data/proteins/MERS_4KR0_B_spike.pdb	Data/docked_poses/MERS_CKP25_top_pose.sdf	MERS_B_Spike_md
+SARS1	SARS-CoV-1	2AJF	E	Data/proteins/SARS1_2AJF_E_spike.pdb	Data/docked_poses/SARS1_CKP25_top_pose.sdf	SARS-CoV-1_E_spike_md
+NL63	HCoV-NL63	3KBH	E	Data/proteins/NL63_3KBH_E_spike.pdb	Data/docked_poses/NL63_CKP25_top_pose.sdf	hCoV_NL63_E_Spike_md
+229E	HCoV-229E	6ATK	E	Data/proteins/229E_6ATK_E_spike.pdb	Data/docked_poses/229E_CKP25_top_pose.sdf	hCoV_229E_E_spike_md
+HKU1	HCoV-HKU1	8Y7Y	A	Data/proteins/HKU1_8Y7Y_A_spike.pdb	Data/docked_poses/HKU1_CKP25_top_pose.sdf	hCoV_HKU1_A_spike_md

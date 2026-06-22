@@ -1,0 +1,18 @@
+name: gromacs_md
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - gromacs=2025.4=nompi_cuda*   # GPU-accelerated build (CUDA)
+  - acpype
+  - ambertools
+  - parmed
+  - pdbfixer
+  - openmm                        # required by pdbfixer
+  - rdkit
+  - mdtraj
+  - numpy
+  - matplotlib
+  - tqdm
+  - pip

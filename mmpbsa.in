@@ -1,0 +1,7 @@
+Input file for running MM-GBSA
+&general
+  startframe=1, endframe=100, interval=1,
+/
+&gb
+  igb=2, saltcon=0.150,
+/
