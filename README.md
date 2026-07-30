@@ -12,6 +12,12 @@ This repository contains the curated spike-protein inputs, CKP-25 docking poses,
 
 High-resolution PDF: [`images/workflow.pdf`](images/workflow.pdf)
 
+## Sample Result
+
+Example molecular dynamics trajectory of CKP-25 bound to a coronavirus spike protein:
+
+![Sample MD trajectory](sample_result.gif)
+
 ## Repository Layout
 
 ```text
