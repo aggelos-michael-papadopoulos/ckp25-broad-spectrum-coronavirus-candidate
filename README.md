@@ -4,7 +4,7 @@ This repository supports a computational study; CKP-25 activity as a coronavirus
 
 **Targeting Diverse Human Coronaviruses with a Single Small Molecule: Computational Assessment of CKP-25 as a Promising Broad-Spectrum Receptor-Binding Anchor**
 
-This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and analysis scripts used to generate the figures and tables in the paper.
+This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and analysis scripts used to generate the figures and tables in the paper .
 
 ## Workflow
 
@@ -153,7 +153,7 @@ python scripts/create_plots/plot_mmpbsa_bar.py --results-dir runs --out-dir pape
 | NVT                 | 100 ps, V-rescale thermostat, 300 K                             |
 | NPT                 | 100 ps, V-rescale thermostat, Parrinello-Rahman barostat, 1 bar |
 | Production          | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs   |
-| MM-GBSA             | AmberTools `MMPBSA.py`, GB model `igb=2`, 0.150 M salt      |
+| MM-GBSA             | AmberTools`MMPBSA.py`, GB model `igb=2`, 0.150 M salt       |
 
 ## Third-Party Software
 
