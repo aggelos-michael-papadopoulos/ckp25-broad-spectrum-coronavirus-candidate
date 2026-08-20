@@ -4,7 +4,7 @@ This repository supports a computational study; CKP-25 activity as a coronavirus
 
 **Targeting Diverse Human Coronaviruses with a Single Small Molecule: Computational Assessment of CKP-25 as a Promising Broad-Spectrum Receptor-Binding Anchor**
 
-This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and analysis scripts used to generate the figures and tables in the paper.
+This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and the analysis scripts used to generate the figures and tables in the paper.
 
 ## Workflow
 
