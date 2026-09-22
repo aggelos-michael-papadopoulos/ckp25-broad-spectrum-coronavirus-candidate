@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Run the five manuscript CKP-25 coronavirus spike MD systems.
+# Run the six manuscript CKP-25 coronavirus spike MD systems
+# (five test targets plus the SARS-CoV-2 reference system).
 #
 # Usage:
 #   bash scripts/run_all_md.sh [ns] [results_dir]
@@ -20,6 +21,7 @@ SYSTEMS=(
   "hCoV_NL63_E_Spike_md|Data/proteins/NL63_3KBH_E_spike.pdb|Data/docked_poses/NL63_CKP25_top_pose.sdf"
   "hCoV_229E_E_spike_md|Data/proteins/229E_6ATK_E_spike.pdb|Data/docked_poses/229E_CKP25_top_pose.sdf"
   "hCoV_HKU1_A_spike_md|Data/proteins/HKU1_8Y7Y_A_spike.pdb|Data/docked_poses/HKU1_CKP25_top_pose.sdf"
+  "SARS-CoV-2_E_spike_md|Data/proteins/SARS2_6M0J_E_spike.pdb|Data/docked_poses/SARS2_CKP25_top_pose.sdf"
 )
 
 mkdir -p "$ROOT/$RESULTS_DIR"

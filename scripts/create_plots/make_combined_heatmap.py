@@ -158,6 +158,13 @@ def main():
             "folder": "hCoV_229E_E_spike_md",
             "orig_pdb": data_dir / "proteins" / "229E_6ATK_E_spike.pdb",
             "key": "229E"
+        },
+        {
+            # Experimentally validated reference system (Gkekas et al. 2024).
+            "name": "SARS-CoV-2 (6M0J)",
+            "folder": "SARS-CoV-2_E_spike_md",
+            "orig_pdb": data_dir / "proteins" / "SARS2_6M0J_E_spike.pdb",
+            "key": "SARS2"
         }
     ]
     
@@ -246,6 +253,39 @@ def main():
     plt.savefig(out_path_5, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"Saved 5-panel contact heatmap to {out_path_5}")
+
+    # 3. Generate 6-panel combined figure (5 targets + SARS-CoV-2 reference).
+    #    The 3x2 grid is exactly filled, so no axes are deleted here.
+    targets_6 = ["MERS", "NL63", "SARS1", "HKU1", "229E", "SARS2"]
+    targets_6 = [k for k in targets_6 if k in data]
+    if len(targets_6) == 6:
+        fig, axes = plt.subplots(3, 2, figsize=(14, 14), sharex=True)
+        names_6 = dict(names_5, SARS2="SARS-CoV-2 (6M0J) — reference")
+
+        for idx, key in enumerate(targets_6):
+            ax = axes[idx // 2, idx % 2]
+            binned, y_labels = data[key]
+
+            im = ax.imshow(binned, aspect='auto', cmap='RdYlBu_r', origin='lower', extent=[0, 100, -0.5, 9.5])
+            ax.set_title(names_6[key], fontsize=13, fontweight="bold", pad=8)
+            ax.set_yticks(np.arange(10))
+            ax.set_yticklabels(y_labels, fontsize=10)
+
+            if idx >= 4:
+                ax.set_xlabel("Time (ns)", fontsize=11)
+
+            cbar = fig.colorbar(im, ax=ax, pad=0.02)
+            cbar.ax.tick_params(labelsize=9)
+            if idx % 2 == 1:
+                cbar.set_label("Contact Frequency (%)", fontsize=10)
+
+        plt.tight_layout()
+        out_path_6 = out_dir / "md_contact_heatmap_6panel.jpg"
+        plt.savefig(out_path_6, dpi=300, bbox_inches="tight")
+        plt.close()
+        print(f"Saved 6-panel contact heatmap to {out_path_6}")
+    else:
+        print(f"Skipping 6-panel figure: only {len(targets_6)} systems available")
 
 if __name__ == "__main__":
     main()

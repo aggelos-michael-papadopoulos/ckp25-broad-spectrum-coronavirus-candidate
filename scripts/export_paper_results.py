@@ -69,6 +69,16 @@ SYSTEMS = [
         "pose": "Data/docked_poses/HKU1_CKP25_top_pose.sdf",
         "affinity": -6.76,
     },
+    {
+        "key": "SARS2",
+        "folder": "SARS-CoV-2_E_spike_md",
+        "virus": "SARS-CoV-2",
+        "pdb_id": "6M0J",
+        "chain": "E",
+        "protein": "Data/proteins/SARS2_6M0J_E_spike.pdb",
+        "pose": "Data/docked_poses/SARS2_CKP25_top_pose.sdf",
+        "affinity": -6.03,
+    },
 ]
 
 DOCKING_BOXES = {
@@ -77,6 +87,7 @@ DOCKING_BOXES = {
     "NL63": {"center": (7.47, 0.6, 43.0), "size": (17.0, 36.0, 18.0)},
     "229E": {"center": (115.8, 99.0, 55.0), "size": (23.0, 27.0, 34.0)},
     "HKU1": {"center": (140.0, 131.0, 148.0), "size": (20.0, 25.0, 81.0)},
+    "SARS2": {"center": (-35.0, 31.0, 1.0), "size": (20.0, 40.0, 20.0)},
 }
 
 STANDARD_AMINO_ACIDS = {

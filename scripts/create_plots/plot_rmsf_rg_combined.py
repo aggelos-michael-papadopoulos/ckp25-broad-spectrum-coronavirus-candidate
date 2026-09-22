@@ -20,7 +20,10 @@ def main():
         {"name": "HCoV-NL63 (3KBH)", "folder": "hCoV_NL63_E_Spike_md", "color": "#E67E22"},
         {"name": "SARS-CoV-1 (2AJF)", "folder": "SARS-CoV-1_E_spike_md", "color": "#3498DB"},
         {"name": "HCoV-HKU1 (8Y7Y)", "folder": "hCoV_HKU1_A_spike_md", "color": "#1ABC9C"},
-        {"name": "HCoV-229E (6ATK)", "folder": "hCoV_229E_E_spike_md", "color": "#2ECC71"}
+        {"name": "HCoV-229E (6ATK)", "folder": "hCoV_229E_E_spike_md", "color": "#2ECC71"},
+        # SARS-CoV-2 is the experimentally validated reference; black marks it
+        # as the control rather than a sixth peer.
+        {"name": "SARS-CoV-2 (6M0J)", "folder": "SARS-CoV-2_E_spike_md", "color": "#1A1A1A"}
     ]
     
     results_dir = Path(args.results_dir)
