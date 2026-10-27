@@ -2,7 +2,7 @@
 
 This repository supports a computational study; CKP-25 activity as a coronavirus entry inhibitor has not been experimentally validated in this work.
 
-**Targeting Diverse Human Coronaviruses with a Single Small Molecule: Computational Assessment of CKP-25 as a Predicted Broad-Spectrum Receptor-Binding Anchor**
+**Computational Assessment of CKP-25 Binding at Receptor-Recognition Interfaces Across Diverse Human Coronaviruses**
 
 This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and the analysis scripts used to generate the figures and tables in the paper.
 
@@ -173,21 +173,21 @@ python scripts/create_plots/plot_mmpbsa_bar.py --results-dir runs --out-dir pape
 
 ## Simulation Settings Encoded in the Pipeline
 
-| Step                | Setting                                                         |
-| ------------------- | --------------------------------------------------------------- |
+| Step                | Setting                                                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Docking             | GNINA 1.3, exhaustiveness 8; poses ranked by CNN pose score, with a Vina affinity below -5.0 kcal/mol as a secondary filter |
-| Protein force field | AMBER99SB-ILDN                                                  |
-| Ligand force field  | GAFF2 via ACPYPE                                                |
-| Ligand charges      | AM1-BCC                                                         |
-| Water model         | TIP3P (`spc216.gro`)                                          |
-| Salt                | 0.15 M NaCl, neutralized                                        |
-| Box                 | Dodecahedron, 1.2 nm margin                                     |
-| Energy minimization | Steepest descent, 50,000 steps                                  |
-| NVT                 | 100 ps, V-rescale thermostat, 300 K                             |
-| NPT                 | 100 ps, V-rescale thermostat, Parrinello-Rahman barostat, 1 bar |
-| Production          | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs   |
-| Replicates          | 3 independent runs per system (18 trajectories); seeds drawn at run time |
-| MM-GBSA             | AmberTools`MMPBSA.py`, GB model `igb=2`, 0.150 M salt       |
+| Protein force field | AMBER99SB-ILDN                                                                                                              |
+| Ligand force field  | GAFF2 via ACPYPE                                                                                                            |
+| Ligand charges      | AM1-BCC                                                                                                                     |
+| Water model         | TIP3P (`spc216.gro`)                                                                                                      |
+| Salt                | 0.15 M NaCl, neutralized                                                                                                    |
+| Box                 | Dodecahedron, 1.2 nm margin                                                                                                 |
+| Energy minimization | Steepest descent, 50,000 steps                                                                                              |
+| NVT                 | 100 ps, V-rescale thermostat, 300 K                                                                                         |
+| NPT                 | 100 ps, V-rescale thermostat, Parrinello-Rahman barostat, 1 bar                                                             |
+| Production          | 2 fs timestep, PME electrostatics, 100 ns for manuscript runs                                                               |
+| Replicates          | 3 independent runs per system (18 trajectories); seeds drawn at run time                                                    |
+| MM-GBSA             | AmberTools`MMPBSA.py`, GB model `igb=2`, 0.150 M salt                                                                   |
 
 ## Third-Party Software
 
@@ -207,4 +207,12 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## 📍Citation
 
-Citation coming soon. The full manuscript citation will be added here after publication.
+```
+@article{papadopoulos2026computational,
+  title={Computational Assessment of CKP-25 Binding at Receptor-Recognition Interfaces Across Diverse Human Coronaviruses},
+  author={Papadopoulos, Angelos-Michail and Petrakis, Spyros and Alvarez, Federico and Daras, Petros},
+  journal={Pharmaceuticals},
+  year={2026},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+```
