@@ -1,8 +1,8 @@
-# CKP-25 Broad-Spectrum Coronavirus Spike MD Workflow
+# CKP-25 Coronavirus Spike MD Workflow
 
-This repository supports a computational study; CKP-25 activity as a coronavirus entry inhibitor has not been experimentally validated in this work.
+This repository supports a computational study; the binding behaviour reported here is predicted from simulation and has not been experimentally validated in this work.
 
-**Computational Assessment of CKP-25 Binding at Receptor-Recognition Interfaces Across Diverse Human Coronaviruses**
+{Pharmaceuticals 2026} Official implementation of the paper **"Computational Assessment of CKP-25 Binding at Receptor-Recognition Interfaces Across Diverse Human Coronaviruses"**
 
 This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and the analysis scripts used to generate the figures and tables in the paper.
 
@@ -30,7 +30,7 @@ Example molecular dynamics trajectory of CKP-25 bound to a coronavirus spike pro
 ├── gromacs_files/                # Core GROMACS preparation, simulation, analysis, viewer code
 ├── scripts/                      # Paper-level wrappers for all six systems
 │   └── create_plots/             # Aggregate plotting and paper-figure scripts
-├── environment.yml               # Conda environment for reproducible runs
+├── environment.yml               # Conda environment forreproducible runs
 ├── mmpbsa.in                     # AmberTools MM-GBSA input
 └── extract / topology helper scripts
 ```
