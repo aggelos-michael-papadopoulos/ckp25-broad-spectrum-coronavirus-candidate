@@ -1,8 +1,8 @@
 # CKP-25 Coronavirus Spike MD Workflow
 
-This repository supports a computational study; the binding behaviour reported here is predicted from simulation and has not been experimentally validated in this work.
+[![Paper](<https://img.shields.io/badge/Paper-Pharmaceuticals%202026-004B87>)](https://www.mdpi.com/1424-8247/19/10/1664)
 
-{Pharmaceuticals 2026} Official implementation of the paper **"Computational Assessment of CKP-25 Binding at Receptor-Recognition Interfaces Across Diverse Human Coronaviruses"**
+This repository supports a computational study; the binding behaviour reported here is predicted from simulation and has not been experimentally validated in this work.
 
 This repository contains the curated spike-protein inputs, CKP-25 docking poses, GROMACS molecular dynamics pipeline, MM-GBSA workflow, and the analysis scripts used to generate the figures and tables in the paper.
 
