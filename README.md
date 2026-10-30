@@ -1,6 +1,7 @@
 # CKP-25 Coronavirus Spike MD Workflow
 
 [![Paper](<https://img.shields.io/badge/Paper-Pharmaceuticals%202026-004B87>)](https://www.mdpi.com/1424-8247/19/10/1664)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 This repository supports a computational study; the binding behaviour reported here is predicted from simulation and has not been experimentally validated in this work.
 
